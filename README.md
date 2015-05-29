@@ -1,2 +1,2 @@
-# python-elevation-proxy
+# python-geojson-elevation
 GeoJSON compatible elevation proxy
