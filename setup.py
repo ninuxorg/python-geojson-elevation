@@ -1,10 +1,11 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import sys
 from setuptools import setup, find_packages
 
-# avoid networkx ImportError
+# avoid ImportError
 sys.path.insert(0, 'geojson_elevation')
-from info import get_version
+from version import get_version
 sys.path.remove('geojson_elevation')
 
 
@@ -41,7 +42,7 @@ setup(
     version=get_version(),
     description="GeoJSON compatible elevation proxy ",
     long_description=open('README.rst').read(),
-    author='Federico Capoano (nemesisdesign) and Martín Peveri (mapeveri)',
+    author='Federico Capoano (nemesisdesign) & Martín Peveri (mapeveri)',
     author_email='ninux-dev@ml.ninux.org',
     license='MIT',
     url='https://github.com/ninuxorg/python-geojson-elevation',
