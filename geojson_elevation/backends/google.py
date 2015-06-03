@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import requests
 from collections import OrderedDict
 
@@ -8,20 +7,16 @@ except ImportError:
     from shapely.geometry import Point, LineString
 
 
-def elevation_profile(path, api_key=None, sampling=50):
+def elevation_profile(path, sampling=50, api_key=None):
     """
-    Proxy to google elevation API but returns GeoJSON
-    For input parameters read:
-    https://developers.google.com/maps/documentation/elevation/
+    Google elevation API backend
     """
     url = 'https://maps.googleapis.com/maps/api/elevation/json'
     params = {}
-
+    points = []
     # add api key if present
     if api_key:
         params['key'] = api_key
-
-    points = []
     # convert path in list of Point objects
     for latlng in path.split('|'):
         latlng = latlng.split(',')
@@ -32,7 +27,15 @@ def elevation_profile(path, api_key=None, sampling=50):
         # get 1 point every x meters, where x is defined in ELEVATION_DEFAULT_SAMPLING
         samples = int(round(length / sampling))
         # use the automatically calculated value as long as it is compatibile with the API usage limits
-        params['samples'] = samples if samples <= 512 else 512
+        if samples > 512:
+            samples = 512
+        # at least 2 samples
+        elif samples < 2:
+            samples = 2
+        params['samples'] = samples
+        params['path'] = path
+    else:
+        params['locations'] = path
     # send request to Google Elevation API
     response = requests.get(url, params=params)
     data = response.json()
