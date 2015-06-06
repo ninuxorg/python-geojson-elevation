@@ -4,7 +4,7 @@ from collections import OrderedDict
 from ..geometry import Point, LineString
 
 
-def elevation_profile(path, api_key=None, sampling=50):
+def elevation(path, api_key=None, sampling=50):
     """
     Google elevation API backend
     """
