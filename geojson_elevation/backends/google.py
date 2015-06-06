@@ -1,10 +1,7 @@
 import requests
 from collections import OrderedDict
 
-try:
-    from django.contrib.gis.geos import Point, LineString
-except ImportError:
-    from shapely.geometry import Point, LineString
+from ..geometry import Point, LineString
 
 
 def elevation_profile(path, api_key=None, sampling=50):
