@@ -1,1 +1,1 @@
-from .google_test import TestGoogleBackend  # noqa
+from .google_tests import TestGoogleBackend  # noqa
