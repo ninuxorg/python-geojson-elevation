@@ -15,11 +15,11 @@ python-geojson-elevation
    :target: https://requires.io/github/ninuxorg/python-geojson-elevation/requirements/?branch=master
    :alt: Requirements Status
 
-.. image:: https://badge.fury.io/py/python-geojson-elevation.png
-   :target: http://badge.fury.io/py/python-geojson-elevation
+.. image:: https://badge.fury.io/py/geojson-elevation.png
+   :target: http://badge.fury.io/py/geojson-elevation
 
-.. image:: https://img.shields.io/pypi/dm/python-geojson-elevation.svg
-   :target: https://pypi.python.org/pypi/python-geojson-elevation
+.. image:: https://img.shields.io/pypi/dm/geojson-elevation.svg
+   :target: https://pypi.python.org/pypi/geojson-elevation
 
 ------------
 
