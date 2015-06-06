@@ -8,21 +8,12 @@ branches:
   only:
     - master
 
-# command to install requirements
 install:
   - python setup.py develop
   - pip install -r requirements-test.txt
 
-# command to run tests, e.g. python setup.py test
 script:
-  - nosetests --with-coverage --cover-package=netdiff
+  - nosetests --with-coverage --cover-package=geojson_elevation
 
 after_success:
   coveralls
-
-notifications:
-  email:
-    recipients:
-      - ninux-dev@ml.ninux.org
-    on_success: [always]
-    on_failure: [always]
