@@ -29,6 +29,15 @@ Currently only Google Elevation API is implemented.
 
 **New backends or improvements very welcome!**
 
+Tribute to `Nodeshot <https://github.com/ninuxorg/nodeshot>`__ and `Leaflet.Elevation <https://github.com/MrMufflon/Leaflet.Elevation>`__
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+This code was originally written for `Nodeshot <https://github.com/ninuxorg/nodeshot>`__
+in order to add an elevation profile feature using the wonderful
+`Leaflet.Elevation <https://github.com/MrMufflon/Leaflet.Elevation>`__ javascript plugin.
+
+Later the code was refactored and extracted into this python package.
+
 Install stable version from pypi
 --------------------------------
 
