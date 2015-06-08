@@ -1,7 +1,7 @@
 import requests
 from collections import OrderedDict
 
-from ..exception import ElevationApiError
+from ..exceptions import ElevationApiError
 from ..geometry import Point, LineString
 
 
