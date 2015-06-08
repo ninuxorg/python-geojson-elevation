@@ -1,6 +1,7 @@
 import unittest
 
 from geojson_elevation.backends.google import elevation
+from geojson_elevation.exceptions import ElevationApiError
 
 
 class TestGoogleBackend(unittest.TestCase):
@@ -31,3 +32,7 @@ class TestGoogleBackend(unittest.TestCase):
         self.assertEqual(len(result['geometry']['coordinates']), 72)
         self.assertEqual(len(result['geometry']['coordinates'][0]), 3)
         self.assertEqual(len(result['geometry']['coordinates'][-1]), 3)
+
+    def test_elevation_api_exception(self):
+        with self.assertRaises(ElevationApiError):
+            elevation('43432430,2321321320')

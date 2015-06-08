@@ -39,7 +39,7 @@ def elevation(path, api_key=None, sampling=50):
     data = response.json()
 
     # if ok convert to GeoJSON
-    if data['status'] == 'OK':
+    if 'status' in data and data['status'] == 'OK':
         # if more than one result use LineString
         if len(data['results']) > 1:
             geometry = 'LineString'
@@ -61,4 +61,4 @@ def elevation(path, api_key=None, sampling=50):
         ))
     # else return original response
     else:
-        raise ElevationApiError("Failed to convert to GeoJSON.")
+        raise ElevationApiError("Google Elevation API error:\n\n{0}".format(response.content))

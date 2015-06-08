@@ -1,11 +1,10 @@
-class ElevationException(Exception):
-	""" root elevation exception """
-	pass
+class GeojsonElevationException(Exception):
+    """ root geojson_elevation exception """
+    pass
 
 
-class ElevationApiError(ElevationException):
+class ElevationApiError(GeojsonElevationException):
     """
-    When elevation function return error
-    to convert GeoJSON
+    Raised if the elevation web service response is not ok
     """
     pass
