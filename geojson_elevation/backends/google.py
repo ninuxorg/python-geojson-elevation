@@ -1,6 +1,7 @@
 import requests
 from collections import OrderedDict
 
+from ..exception import ElevationApiError
 from ..geometry import Point, LineString
 
 
@@ -60,4 +61,4 @@ def elevation(path, api_key=None, sampling=50):
         ))
     # else return original response
     else:
-        return data
+        raise ElevationApiError("Failed to convert to GeoJSON.")
