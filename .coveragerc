@@ -3,4 +3,5 @@ omit =
     /tests
     /*/__init__.py
     /setup.py
-    *version.py 
+    *version.py
+    *geometry.py
