@@ -16,7 +16,7 @@ python-geojson-elevation
    :alt: Requirements Status
 
 .. image:: https://badge.fury.io/py/geojson-elevation.png
-   :target: http://badge.fury.io/py/geojson-elevation
+   :target: https://pypi.python.org/pypi/geojson-elevation
 
 .. image:: https://img.shields.io/pypi/dm/geojson-elevation.svg
    :target: https://pypi.python.org/pypi/geojson-elevation
