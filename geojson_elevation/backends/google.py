@@ -22,9 +22,11 @@ def elevation(path, api_key=None, sampling=50):
     if len(points) > 1:
         # length of the path in meters
         length = LineString(points).length * 100000
-        # get 1 point every x meters, where x is defined in ELEVATION_DEFAULT_SAMPLING
+        # get 1 point every x meters, where x is defined in
+        # ELEVATION_DEFAULT_SAMPLING
         samples = int(round(length / sampling))
-        # use the automatically calculated value as long as it is compatibile with the API usage limits
+        # use the automatically calculated value as long as it is compatibile
+        # with the API usage limits
         if samples > 512:
             samples = 512
         # at least 2 samples
@@ -61,4 +63,5 @@ def elevation(path, api_key=None, sampling=50):
         ))
     # else return original response
     else:
-        raise ElevationApiError("Google Elevation API error:\n\n{0}".format(response.content))
+        raise ElevationApiError(
+            "Google Elevation API error:\n\n{0}".format(response.content))
