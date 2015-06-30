@@ -1,3 +1,4 @@
+import responses
 import unittest
 
 from geojson_elevation.backends.google import elevation
@@ -5,8 +6,36 @@ from geojson_elevation.exceptions import ElevationApiError
 
 
 class TestGoogleBackend(unittest.TestCase):
+
     """ Google Elevation API tests """
+    @responses.activate
     def test_1_point(self):
+
+        json = """{
+           "results" : [
+              {
+                 "elevation" : 42.70062255859375,
+                 "location" : {
+                    "lat" : 41.88904045430675,
+                    "lng" : 12.52533344544774
+                 },
+                 "resolution" : 4.771975994110107
+              }
+           ],
+           "status" : "OK"
+        }"""
+
+        url = ""
+        url += "https://maps.googleapis.com/maps/api/elevation/json"
+        url += "?locations=41.889040454306752%2C12.525333445447737"
+        responses.add(
+            responses.GET,
+            url,
+            body=json,
+            match_querystring=True,
+            content_type='application/json',
+        )
+
         result = elevation('41.889040454306752,12.525333445447737')
         self.assertIn('Point', result['geometry']['type'])
         self.assertEqual(len(result['geometry']['coordinates']), 1)
@@ -27,7 +56,8 @@ class TestGoogleBackend(unittest.TestCase):
         self.assertEqual(len(result['geometry']['coordinates'][-1]), 3)
 
     def test_automatic_sampling(self):
-        result = elevation('41.8890404543067518,12.5253334454477372|41.8972185849048984,12.4902286938660296')
+        result = elevation(
+            '41.8890404543067518,12.5253334454477372|41.8972185849048984,12.4902286938660296')
         self.assertIn('LineString', result['geometry']['type'])
         self.assertEqual(len(result['geometry']['coordinates']), 72)
         self.assertEqual(len(result['geometry']['coordinates'][0]), 3)
