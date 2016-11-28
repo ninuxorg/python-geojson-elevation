@@ -1,10 +1,10 @@
 python-geojson-elevation
 ========================
 
-.. image:: https://travis-ci.org/ninuxorg/python-geojson-elevation.png
+.. image:: https://travis-ci.org/ninuxorg/python-geojson-elevation.svg
    :target: https://travis-ci.org/ninuxorg/python-geojson-elevation
 
-.. image:: https://coveralls.io/repos/ninuxorg/python-geojson-elevation/badge.png
+.. image:: https://coveralls.io/repos/ninuxorg/python-geojson-elevation/badge.svg
   :target: https://coveralls.io/r/ninuxorg/python-geojson-elevation
 
 .. image:: https://landscape.io/github/ninuxorg/python-geojson-elevation/master/landscape.png
@@ -15,10 +15,7 @@ python-geojson-elevation
    :target: https://requires.io/github/ninuxorg/python-geojson-elevation/requirements/?branch=master
    :alt: Requirements Status
 
-.. image:: https://badge.fury.io/py/geojson-elevation.png
-   :target: https://pypi.python.org/pypi/geojson-elevation
-
-.. image:: https://img.shields.io/pypi/dm/geojson-elevation.svg
+.. image:: https://badge.fury.io/py/geojson-elevation.svg
    :target: https://pypi.python.org/pypi/geojson-elevation
 
 ------------
