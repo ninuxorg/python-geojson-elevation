@@ -7,11 +7,11 @@ python-geojson-elevation
 .. image:: https://coveralls.io/repos/ninuxorg/python-geojson-elevation/badge.svg
   :target: https://coveralls.io/r/ninuxorg/python-geojson-elevation
 
-.. image:: https://landscape.io/github/ninuxorg/python-geojson-elevation/master/landscape.png
+.. image:: https://landscape.io/github/ninuxorg/python-geojson-elevation/master/landscape.svg
    :target: https://landscape.io/github/ninuxorg/python-geojson-elevation/master
    :alt: Code Health
 
-.. image:: https://requires.io/github/ninuxorg/python-geojson-elevation/requirements.png?branch=master
+.. image:: https://requires.io/github/ninuxorg/python-geojson-elevation/requirements.svg?branch=master
    :target: https://requires.io/github/ninuxorg/python-geojson-elevation/requirements/?branch=master
    :alt: Requirements Status
 
